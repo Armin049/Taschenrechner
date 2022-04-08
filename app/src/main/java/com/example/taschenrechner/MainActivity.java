@@ -1,10 +1,12 @@
 package com.example.taschenrechner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -17,6 +19,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_new, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        switch (item.getItemId()) {
+            case R.id.cos:
+                calculation.setText(calculation.getText()+"cos");
+                Calculate();
+                return true;
+            case R.id.sin:
+                calculation.setText(calculation.getText()+"sin");
+                Calculate();
+                return true;
+            case R.id.tan:
+                calculation.setText(calculation.getText()+"tan");
+                Calculate();
+                return true;
+            case R.id.wurzel:
+                calculation.setText(calculation.getText()+"sqrt");
+                Calculate();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     public void Calculate(){
         TextView res =findViewById(R.id.textViewResult);
         TextView calculation =findViewById(R.id.textViewCalculation);
@@ -25,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             double result = e.evaluate();
             res.setText(Double.toString(result));
-        } catch (ArithmeticException arithmeticException) {
-            arithmeticException.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
             res.setText("error");
         }
     }
@@ -124,10 +157,11 @@ public class MainActivity extends AppCompatActivity {
                 str = str.toString().substring(0, str.length() - 1);
             }
         calculation.setText(str);
-        Calculate();
+            if (str.length()>0){
+                Calculate();
+            }
     }
 
-//do math
     public void onClickEquals(View view) {
         TextView calculation =findViewById(R.id.textViewCalculation);
         TextView res =findViewById(R.id.textViewResult);
