@@ -1,5 +1,6 @@
 package com.example.taschenrechner;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,8 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_new, menu);
-        return true;
+        Configuration config = getResources().getConfiguration();
+        switch (config.screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
+                return true;
+            default:{
+                getMenuInflater().inflate(R.menu.menu_new, menu);
+                return true;
+            }
+        }
     }
 
     @Override
@@ -136,16 +144,6 @@ public class MainActivity extends AppCompatActivity {
         calculation.setText(calculation.getText()+".");
         Calculate();
     }
-    public void onClick11(View view) {
-        TextView calculation =findViewById(R.id.textViewCalculation);
-        calculation.setText(calculation.getText()+"(");
-        Calculate();
-    }
-    public void onClick12(View view) {
-        TextView calculation =findViewById(R.id.textViewCalculation);
-        calculation.setText(calculation.getText()+")");
-        Calculate();
-    }
     public void onClickAC(View view) {
         TextView calculation =findViewById(R.id.textViewCalculation);
         calculation.setText("");
@@ -161,12 +159,33 @@ public class MainActivity extends AppCompatActivity {
                 Calculate();
             }
     }
-
     public void onClickEquals(View view) {
         TextView calculation =findViewById(R.id.textViewCalculation);
         TextView res =findViewById(R.id.textViewResult);
-        calculation.setText(res.getText());
-        res.setText("");
+        if (res.getText()!="error") {
+            calculation.setText(res.getText());
+            res.setText("");
+        }
+    }
+    public void onClickSin(View view) {
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        calculation.setText(calculation.getText()+"sin");
+        Calculate();
+    }
+    public void onClickCos(View view) {
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        calculation.setText(calculation.getText()+"cos");
+        Calculate();
+    }
+    public void onClickTan(View view) {
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        calculation.setText(calculation.getText()+"tan");
+        Calculate();
+    }
+    public void onClickSqrt(View view) {
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        calculation.setText(calculation.getText()+"sqrt");
+        Calculate();
     }
 }
 
