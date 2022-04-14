@@ -15,6 +15,6 @@
     </item>
     <item
         android:id="@+id/wurzel"
-        android:title="sqrt">
+        android:title="√">
     </item>
 </menu>

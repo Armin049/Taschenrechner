@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+         setContentView(R.layout.activity_main);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Calculate();
                 return true;
             case R.id.wurzel:
-                calculation.setText(calculation.getText()+"sqrt");
+                calculation.setText(calculation.getText()+"√");
                 Calculate();
                 return true;
             default:
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
     public void Calculate(){
         TextView res =findViewById(R.id.textViewResult);
         TextView calculation =findViewById(R.id.textViewCalculation);
-        Expression e = new ExpressionBuilder(calculation.getText().toString())
+        String calc=calculation.getText().toString().replace("√","sqrt");
+        Expression e = new ExpressionBuilder(calc)
                 .build();
         try {
             double result = e.evaluate();
@@ -184,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onClickSqrt(View view) {
         TextView calculation =findViewById(R.id.textViewCalculation);
-        calculation.setText(calculation.getText()+"sqrt");
+        calculation.setText(calculation.getText()+"√");
         Calculate();
     }
 }
