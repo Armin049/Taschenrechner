@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-land/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-land/landscape.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-large/layout_tablet.xml" value="0.1758879781420765" />
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-long/layout_tablet.xml" value="0.1758879781420765" />
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-xlarge/activity_main.xml" value="0.25" />
@@ -10,11 +12,6 @@
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout-xlarge/layout_xlarge.xml" value="0.27890625" />
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/arweb/AndroidStudioProjects/Taschenrechner/app/src/main/res/menu/menu_new.xml" value="0.25" />
-        <entry key="..\:/Users/aweber/StudioProjects/Taschenrechner/app/src/main/res/layout-normal/activity.xml" value="0.1" />
-        <entry key="..\:/Users/aweber/StudioProjects/Taschenrechner/app/src/main/res/layout-normal/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/aweber/StudioProjects/Taschenrechner/app/src/main/res/layout-xlarge/activity_main.xml" value="0.1721311475409836" />
-        <entry key="..\:/Users/aweber/StudioProjects/Taschenrechner/app/src/main/res/layout/activity_main.xml" value="0.775" />
-        <entry key="..\:/Users/aweber/StudioProjects/Taschenrechner/app/src/main/res/menu/menu_new.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
