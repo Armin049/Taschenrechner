@@ -14,6 +14,27 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String MYKEY = "MYKEY";
+    public static final String MYKEY2 = "MYKEY2";
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        TextView view =findViewById(R.id.textViewCalculation);
+        TextView view2 =findViewById(R.id.textViewResult);
+        outState.putString(MYKEY, view.getText().toString());
+        outState.putString(MYKEY2, view2.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView calculation =findViewById(R.id.textViewCalculation);
+        TextView result =findViewById(R.id.textViewResult);
+        calculation.setText(savedInstanceState.getString(MYKEY));
+        result.setText(savedInstanceState.getString(MYKEY2));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
