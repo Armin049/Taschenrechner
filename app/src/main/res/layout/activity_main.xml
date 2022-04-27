@@ -224,15 +224,17 @@
 
     <TextView
         android:id="@+id/textViewCalculation"
-        android:layout_width="363dp"
-        android:layout_height="155dp"
+        android:layout_width="361dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="16dp"
         android:text=""
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="100dp" />
 
     <TextView
         android:id="@+id/textViewResult"

@@ -238,6 +238,7 @@
         android:id="@+id/textViewCalculation"
         android:layout_width="324dp"
         android:layout_height="149dp"
+        android:layout_marginTop="8dp"
         android:text=""
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/textViewResult"
