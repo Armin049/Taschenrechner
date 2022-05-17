@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String MYKEY = "MYKEY";
     public static final String MYKEY2 = "MYKEY2";
 
+    //saves the values from the Calculation and the Result window to the savedInstances
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         TextView view =findViewById(R.id.textViewCalculation);
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
+    //gets the values from the savedInstances
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_main);
     }
-
+//creates the settings buttons
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         Configuration config = getResources().getConfiguration();
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
+//sets the values for the settings buttons (sin,tan,cos,sqrt)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         TextView calculation =findViewById(R.id.textViewCalculation);
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //calculates after every change inthe field Calculation
     public void Calculate(){
         TextView res =findViewById(R.id.textViewResult);
         TextView calculation =findViewById(R.id.textViewCalculation);
@@ -94,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    //the following buttons write the number from their name in to the field Calculation
     public void onClick1(View view) {
         TextView calculation =findViewById(R.id.textViewCalculation);
         calculation.setText(calculation.getText()+"1");
